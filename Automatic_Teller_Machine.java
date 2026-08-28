@@ -12,24 +12,36 @@ public class Automatic_Teller_Machine {
 
         int MINIMUM_BALANCE = 500;
         int moneyInAccount = 10000;
+        int atmPin = 5555;
+
         System.out.println("Welcome to Indian Bank");
         System.out.print("Enter Your Name:");
         String userName = scan.nextLine();
         String message = greeting(userName);
         System.out.println(message);
-        System.out.println("Enter Your choice For 1 Deposite.");
-        System.out.println("Enter Your choise For 2 Withdraw.");
-        System.out.println("Enter Your choise For 3 Balance Check.");
-        System.out.print("Enter The Choice:");
+        System.out.print("Enter Your Pin:");
+        int pin = scan.nextInt();
+
+        if (pin == atmPin) {
+
+            System.out.println("Enter Your choice For 1 Deposite.");
+            System.out.println("Enter Your choice For 2 Withdraw.");
+            System.out.println("Enter Your choice For 3 Balance Check.");
+            System.out.print("Enter The Choice:");
+
+        } else {
+            System.out.println("Invalid Pin");
+
+        }
 
         int choice = scan.nextInt();
 
         switch (choice) {
             case 1:
                 System.out.println("You can able only 50000 only at a time");
-                System.out.println("Enetr the amount: ");
+                System.out.print("Enter the amount: ");
                 int userDeposite = scan.nextInt();
-                int AMOUNT_DEPOSITE_LIMIT = 5000;
+                int AMOUNT_DEPOSITE_LIMIT = 50000;
 
                 if (AMOUNT_DEPOSITE_LIMIT >= userDeposite) {
 
@@ -41,7 +53,7 @@ public class Automatic_Teller_Machine {
 
                 }
             case 2:
-                System.out.println("Enter Your Amount:");
+                System.out.print("Enter Your Amount:");
 
                 int withdrawalAmount = scan.nextInt();
 
